@@ -117,9 +117,12 @@ HiveThermostat.prototype = {
 					var sensorFileName = homebridgetmp + sensorName.replace(/\s+/g, '').toLowerCase() + ".ping";
 					this.log("Found motion sensor " + body.nodes[i].id + ", name:" + sensorName + ", motion=" + sensorInMotion + ", from=" + sensorMotionStarted + ", to=" + sensorMotionEnded + ", file=" + sensorFileName);
 					if (sensorInMotion == "true") {
-						
+						fs.writeFile(sensorFileName, sensorMotionStarted + " to " + sensorMotionEnded, (err) => {
+    							if (err) throw err;
+  						        console.log("The file was succesfully saved!");
+                                                }); 
 					} else {
-					
+						fs.unlink(sensorFileName);
 					}
 				}
 			}
