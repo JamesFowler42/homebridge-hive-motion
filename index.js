@@ -1,5 +1,7 @@
 var Service, Characteristic;
 var request = require("request");
+var fs = require("fs");
+var homebridgetmp = "/var2/homebridge/";
 module.exports = function(homebridge){
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
@@ -112,7 +114,13 @@ HiveThermostat.prototype = {
 					var sensorMotionStarted = body.nodes[i].attributes.motionStarted.displayValue;
 					var sensorMotionEnded = body.nodes[i].attributes.motionEnded.displayValue;
 					var sensorInMotion = body.nodes[i].attributes.inMotion.displayValue;
-					this.log("Found motion sensor " + body.nodes[i].id + ", name:" + sensorName + ", motion=" + sensorInMotion + ", from=" + sensorMotionStarted + ", to=" + sensorMotionEnded);
+					var sensorFileName = homebridgetmp + sensorName.replace(/\s+/g, '').toLowerCase() + ".ping";
+					this.log("Found motion sensor " + body.nodes[i].id + ", name:" + sensorName + ", motion=" + sensorInMotion + ", from=" + sensorMotionStarted + ", to=" + sensorMotionEnded + ", file=" + sensorFileName);
+					if (sensorInMotion == "true") {
+						
+					} else {
+					
+					}
 				}
 			}
 			this.cachedDataTime = Date.now()
