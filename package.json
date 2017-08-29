@@ -13,7 +13,7 @@
   "author": "Mark Wade",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mark-wade/homebridge-hive.git"
+    "url": "git+https://github.com/JamesFowler42/homebridge-hive.git"
   },
   "dependencies": {
     "request": "^2.65.0"
