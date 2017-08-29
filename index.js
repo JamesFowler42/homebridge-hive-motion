@@ -108,7 +108,7 @@ HiveThermostat.prototype = {
 						this.log("Found thermostat " + body.nodes[i].id + ". Current temperature is " + body.nodes[i].attributes.temperature.reportedValue + ", set to " + body.nodes[i].attributes.targetHeatTemperature.reportedValue );
 					}
 				} else if ( body.nodes[i].nodeType == "http:\/\/alertme.com\/schema\/json\/node.class.motion.sensor.json#") {
-					this.log("Found " + body.nodes[i].id + ", type " + body.nodes[i].nodeType);
+					this.log("Found " + body.nodes[i].id + " " + JSON.stringify(body.nodes[i]));
 				}
 			}
 			this.cachedDataTime = Date.now()
