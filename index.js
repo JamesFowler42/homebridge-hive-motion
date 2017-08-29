@@ -119,17 +119,17 @@ HiveThermostat.prototype = {
 					if (sensorInMotion == "true") {
 						fs.writeFile(sensorFileName, sensorMotionStarted + " to " + sensorMotionEnded, (err) => {
     							if (err) {
-								this.log("Failed to create file " + sensorFilename);
+								this.log("Failed to create file " + sensorFileName);
 							} else {
-								this.log("Created file " + sensorFilename);
+								this.log("Created file " + sensorFileName);
 							}
                                                 }); 
 					} else {
 						fs.unlink(sensorFileName, (err) => {
     							if (err) {
-								this.log("Unable to delete file " + sensorFilename);
+								this.log("Unable to delete file " + sensorFileName);
 							} else {
-								this.log("Deleted file " + sensorFilename);
+								this.log("Deleted file " + sensorFileName);
 							}
                                                 });
 					}
