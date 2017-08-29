@@ -1,7 +1,7 @@
 {
-  "name": "homebridge-hive",
-  "version": "1.6.0",
-  "description": "Hive Thermostat plugin for Homebridge (https://github.com/nfarina/homebridge)",
+  "name": "homebridge-hive-motion",
+  "version": "0.1.0",
+  "description": "Hive Motion plugin for Homebridge (https://github.com/nfarina/homebridge)",
   "license": "MIT",
   "keywords": [
     "homebridge-plugin"
@@ -10,7 +10,7 @@
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"
   },
-  "author": "Mark Wade",
+  "author": "Keith Fowler",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JamesFowler42/homebridge-hive.git"
@@ -19,9 +19,9 @@
     "request": "^2.65.0"
   },
   "bugs": {
-    "url": "https://github.com/mark-wade/homebridge-hive/issues"
+    "url": "https://github.com/JamesFowler42/homebridge-hive/issues"
   },
-  "homepage": "https://github.com/mark-wade/homebridge-hive#readme",
+  "homepage": "https://github.com/JamesFowler42/homebridge-hive#readme",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
