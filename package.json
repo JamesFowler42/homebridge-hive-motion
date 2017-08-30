@@ -1,7 +1,7 @@
 {
   "name": "homebridge-hive-motion",
   "version": "0.1.0",
-  "description": "Hive Motion plugin for Homebridge (https://github.com/nfarina/homebridge)",
+  "description": "Hive Motion Sensor plugin for Homebridge (https://github.com/nfarina/homebridge)",
   "license": "MIT",
   "keywords": [
     "homebridge-plugin"
@@ -10,18 +10,18 @@
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"
   },
-  "author": "Keith Fowler",
+  "author": "James Fowler",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesFowler42/homebridge-hive.git"
+    "url": "git+https://github.com/JamesFowler42/homebridge-hive-motion.git"
   },
   "dependencies": {
     "request": "^2.65.0"
   },
   "bugs": {
-    "url": "https://github.com/JamesFowler42/homebridge-hive/issues"
+    "url": "https://github.com/JamesFowler42/homebridge-hive-motion/issues"
   },
-  "homepage": "https://github.com/JamesFowler42/homebridge-hive#readme",
+  "homepage": "https://github.com/JamesFowler42/homebridge-hive-motion#readme",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
