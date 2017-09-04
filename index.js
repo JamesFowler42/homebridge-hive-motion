@@ -107,6 +107,7 @@ HiveMotionSensor.prototype = {
 					var sensorName = body.nodes[i].name;
 					if (sensorName !== this.name ) {
 						this.log("Ignoring " + sensorName);
+						continue;
 					}
 					var sensorMotionStarted = body.nodes[i].attributes.motionStarted.displayValue;
 					var sensorMotionEnded = body.nodes[i].attributes.motionEnded.displayValue;
