@@ -178,9 +178,15 @@ HiveMotionSensor.prototype = {
 		this.sensorService.getCharacteristic(Characteristic.MotionDetected)
 			.on('get', function(callback) {
 				this.getMainData(function(error,data){
-					var sensorInMotion = data.attributes.inMotion.displayValue;
-					this.log( "In motion " + sensorInMotion );
-					callback( error, sensorInMotion );
+                                        if (data && data.attributes && data.attributes.inMotion) {
+					  var sensorInMotion = data.attributes.inMotion.displayValue;
+					  this.log( "In motion " + sensorInMotion );
+					  callback( error, sensorInMotion );
+					} else {
+					  var sensorInMotion = "false";
+					  this.log( "unable to read sensor" );
+					  callback( error, sensorInMotion );
+                                        }
 				}.bind(this));
 			}.bind(this))
 		;
