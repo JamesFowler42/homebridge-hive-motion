@@ -109,10 +109,14 @@ HiveMotionSensor.prototype = {
 						this.log("Ignoring " + sensorName);
 						continue;
 					}
-					this.log("json=" + JSON.stringify(body.nodes[i]));
-					var sensorMotionStarted = body.nodes[i].attributes.motionStarted.displayValue;
-					var sensorMotionEnded = body.nodes[i].attributes.motionEnded.displayValue;
-					var sensorInMotion = body.nodes[i].attributes.inMotion.displayValue;
+					var sensorMotionStarted = "null";
+					var sensorMotionEnded = "null";
+					var sensorInMotion = "false";
+					if (body.nodes[i].attributes) {
+					   sensorMotionStarted = (body.nodes[i].attributes.motionStarted && body.nodes[i].attributes.motionStarted.displayValue) ? body.nodes[i].attributes.motionStarted.displayValue : "null";
+					   sensorMotionEnded = (body.nodes[i].attributes.motionEnded && body.nodes[i].attributes.motionEnded.displayValue) ? body.nodes[i].attributes.motionEnded.displayValue : "null";
+					   sensorInMotion = (body.nodes[i].attributes.inMotion && body.nodes[i].attributes.inMotion.displayValue) ? body.nodes[i].attributes.inMotion.displayValue : "false";
+				    }
 					this.cachedMainData = body.nodes[i];
 					this.log("Found motion sensor " + body.nodes[i].id + ", name:" + sensorName + ", motion=" + sensorInMotion + ", from=" + sensorMotionStarted + ", to=" + sensorMotionEnded);
 				}
