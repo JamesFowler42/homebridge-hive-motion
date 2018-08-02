@@ -103,7 +103,7 @@ HiveMotionSensor.prototype = {
 		var successHandler = function(body){
 			/* Parse the response */
 			for ( var i = 0; i < body.nodes.length; i++ ) {
-				if ( body.nodes[i].nodeType == "http:\/\/alertme.com\/schema\/json\/node.class.motion.sensor.json#") {
+				if ( body.nodes[i] && body.nodes[i].attributes && body.nodes[i].attributes.nodeType && body.nodes[i].attributes.nodeType.reportedValue && body.nodes[i].attributes.nodeType.reportedValue == "http:\/\/alertme.com\/schema\/json\/node.class.motion.sensor.json#" ) {
 					var sensorName = body.nodes[i].name;
 					if (sensorName !== this.name ) {
 						this.log("Ignoring " + sensorName);
